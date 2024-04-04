@@ -1,9 +1,11 @@
 {
-  "name": "atm-project",
-  "version": "1.0.0",
+  "name": "mubashir516_cli-atm-machine",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
+  "bin": "atm.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

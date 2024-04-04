@@ -89,13 +89,12 @@ async function atm_func() {
           },
         ]);
 
-        if (Withdraw_ans.amount < current_balance && Withdraw_ans.amount > 0) {
+        if (Withdraw_ans.amount <= current_balance && Withdraw_ans.amount > 0) {
+          current_balance -= Withdraw_ans.amount;
           console.log(`\nWithdrawn $${Withdraw_ans.amount} from your account.`);
           console.log(
             chalk.hex("#FFA500")(
-              `\n💲 Your Current Balance is: $${
-                current_balance - Withdraw_ans.amount
-              }\n`
+              `\n💲 Your Current Balance is: $${current_balance}\n`
             )
           );
         } else {
@@ -131,33 +130,38 @@ async function atm_func() {
         ]);
 
         if (current_balance >= 500) {
-          if (fast_cash.options === "- Withdraw: $500") {
-            console.log(`\nWithdrawn $500 from your account.`);
+          if (fast_cash.options === "- Withdraw: $500") {  
+            current_balance -= 500;
+          console.log(`\nWithdrawn $500 from your account.`);
             console.log(
               chalk.hex("#FFA500")(
-                `\n💲 Your Current Balance is: $${current_balance - 500}\n`
+                `\n💲 Your Current Balance is: $${current_balance}\n`
               )
             );
           } else if (fast_cash.options === "- Withdraw: $1000") {
+            current_balance -= 1000;
+
             console.log(`\nWithdrawn $1000 from your account.`);
             console.log(
               chalk.hex("#FFA500")(
-                `\n💲 Your Current Balance is: $${current_balance - 1000}\n`
+                `\n💲 Your Current Balance is: $${current_balance}\n`
               )
             );
           } else if (fast_cash.options === "- Withdraw: $5000") {
+            current_balance -= 5000;
+
             console.log(`\nWithdrawn $5000 from your account.`);
             console.log(
               chalk.hex("#FFA500")(
-                `\n💲 Your Current Balance is: $${current_balance - 5000}\n`
+                `\n💲 Your Current Balance is: $${current_balance}\n`
               )
             );
-          }
-          else if (fast_cash.options === "- Withdraw: $10000") {
+          } else if (fast_cash.options === "- Withdraw: $10000") {
+            current_balance -= 10000;
             console.log(`\nWithdrawn $10000 from your account.`);
             console.log(
               chalk.hex("#FFA500")(
-                `\n💲 Your Current Balance is: $${current_balance - 10000}\n`
+                `\n💲 Your Current Balance is: $${current_balance}\n`
               )
             );
           }
